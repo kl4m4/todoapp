@@ -1,0 +1,50 @@
+
+.loginbox-outer {
+    background-color: lightgrey;
+    width: 280px;
+    margin: auto;
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    padding: 10px;
+}
+
+.loginbox-inner {
+    margin: auto;
+    padding: 5px;
+    /*
+    border-width: thin;
+    border-style: solid;
+    */
+    width: 250px;
+    text-align: center;
+}
+
+input .boxrow{
+    box-shadow: none;
+}
+
+.boxrow {
+    margin: 5px;
+}
+
+.infospan {
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.infospan-ok {
+    background-color: lightgreen;
+    color: darkgreen;
+    border-color: darkgreen;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.infospan-fail {
+    background-color: lightsalmon;
+    color: darkred;
+    border-color: darkred;
+    border-style: solid;
+    border-width: 1px;
+}

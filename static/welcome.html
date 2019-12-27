@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Landing page</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="/static/main.css">
+</head>
+<body>
+	<div id="landingpagebody">
+		<div class="welcomeheader">
+			<h1 id="welcomemsg">Hello</h1>
+		</div>
+		<div class="logininfodiv">
+			<span id="logininfo">Please log in</span>	
+		</div>
+
+		<div class="loginbox-outer">
+			<div class="loginbox-inner">
+				<div class="boxrow">
+					<input id="username" placeholder="Username..." type="text" name="userName"></input>
+				</div>
+				<div class="boxrow">
+					<input id="userpassword" placeholder="Password..." type="password" name="userPassword"></input>
+				</div>
+				<div class="boxrow">
+					<button id="loginButton" onclick="Login()">Login</button>
+				</div>
+				<div class="boxrow">
+					<div id="loginmessagebox" class="infospan">
+						<span id="loginmessage">Hint: user/123</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="/views/welcome.js"></script>
+
+</body>
+
+</html>

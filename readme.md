@@ -17,3 +17,12 @@ If session valid, should return JSON data with all of user's to-do items
 
 ### POST /login
 Should log in user, if supplied with valid username/password
+
+### POST /todos
+Add new to-do item for user
+
+### PUT /todos
+Edit existing to-do item
+
+### DELETE /todos
+Removes existing to-do item

@@ -1,11 +1,14 @@
 require('dotenv').config();
 const staticFiles = require('./custom_modules/staticFiles');
 const loginStuff = require('./custom_modules/loginStuff.js');
+const databaseStuff = require('./custom_modules/databaseStuff.js');
 var express = require('express');
 var session = require('express-session');
 //var FileStore = require('session-file-store')(session);
 //var fileStoreOptions = {};
 var app = express();
+
+dbConf = databaseStuff.getDbConfig();
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -32,14 +35,15 @@ app.get('/', function (req, res){
 
 //app.get('/api/welcome', function (req, res){serveApiWelcome(req,res)});
 //app.get('/api/private', function (req, res){servePrivate(req,res)});
+app.get('/todos', function (res, req){
+    console.log("GET /todos");
+});
+
 app.post('/login', function (req, res){
     console.log("POST /login");
     loginStuff.serveLoginPOST(req, res, setSessionAuth);
 });
-app.post('/api/logout', function (req, res){
-    req.session.isAuth = false;
-    res.redirect('/');
-});
+
 
 app.listen(process.env.PORT, function(){
     console.log(`Listening on port ${process.env.PORT}!`);
@@ -79,6 +83,7 @@ function servePrivate(request, response){
 }
 */
 
-function setSessionAuth(request){
+function setSessionAuth(request, user){
     request.session.isAuth = true;
+    request.session.userName = user;
 }

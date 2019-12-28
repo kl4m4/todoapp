@@ -12,11 +12,12 @@ module.exports = {
           //console.log(`end of data, total data is: ${receivedData}`);
           userData = JSON.parse(receivedData);
           if(checkUser(userData.username, userData.userpassword) === true){
-            setSession(request);
+            setSession(request, userData.username);
             console.log(`User ${userData.username} logged in succesfully`);
             response.statusCode = 200;
             res_data = {
               isLogged: true,
+              userName: userData.username,
             }
             response.end(JSON.stringify(res_data));
           }else{

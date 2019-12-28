@@ -8,7 +8,7 @@ const path = require('path');
 function publicGet(request, response, basepath){
     console.log(`GET ${request.url}`);
     //console.log(basepath);
-    filePath = basepath+request.url;
+    let filePath = basepath+request.url;
     //filePath = "C:\\Users\\E6430\\projekty\\express\\public\\main.css";
     fs.readFile(filePath, function(err,data){
         if(err){

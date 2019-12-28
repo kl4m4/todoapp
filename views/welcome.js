@@ -1,7 +1,7 @@
-console.log("Connecting to api...");
-axios   .get('http://localhost:3000/api/welcome')
-        .then(response => {parseWelcomeResponse(response)})
-        .catch(err => handleWelcomeError(err));
+//console.log("Connecting to api...");
+//axios   .get('http://localhost:3000/api/welcome')
+//        .then(response => {parseWelcomeResponse(response)})
+//        .catch(err => handleWelcomeError(err));
 
 function parseWelcomeResponse(response){
     //console.log("Parsing response");
@@ -29,7 +29,7 @@ function Login(){
     username = document.getElementById("username").value;
     userpassword = document.getElementById("userpassword").value;
     console.log(`Trying to log in with username ${username} and password ${userpassword}`);
-    axios.post('http://localhost:3000/login', {
+    axios.post('http://localhost:3000/api/login', {
         'username': username,
         'userpassword': userpassword
       })
@@ -37,7 +37,7 @@ function Login(){
         console.log(`isLogged: ${response.data.isLogged}`);
         if(response.data.isLogged === true){
             showLoginStatus(true);
-            setTimeout(function(){document.location.reload()}, 3000);
+            setTimeout(function(){document.location.reload()}, 2000);
         }else{
             showLoginStatus(false);
         }

@@ -1,3 +1,5 @@
+//import {createLInode} from './lib/todolist.mjs';
+
 var todo_array = [
     {
         itemuid: 123,
@@ -30,22 +32,14 @@ function FetchTODOData(){
             RenderToDoArray(todo_array);
         })
         .catch(err => {
-            console.log(":(");
+            console.log(err);
         });
 }
 
 function RenderToDoArray(todos){
-    //let innerTxt = "";
     var listElement = document.getElementById("todolist-ul");
     todos.forEach(element => {
-        //console.log(itemTemplate, 'itemuid'+element.itemuid, 'itemclass', element.itemtitle + ': '+element.itemdescription);
-        //var resolvedTemplate = itemTemplate
-        //innerTxt = innerTxt + (itemTemplate, 'itemuid'+element.itemuid, 'itemclass', element.itemtitle + ': '+element.itemdescription) 
-        var newnode = document.createElement("LI");
-        newnode.setAttribute("itemuid", element.itemuid);
-        newnode.setAttribute("class", "todoitem");
-        newnode.setAttribute("onmouseover", `MouseOver(${element.itemuid})`);
-        newnode.innerHTML = "<div class='todoitem-title'>" + element.itemtitle + "</div><div class='todoitem-desc'>" +element.itemdescription + "</div>";
+        var newnode = createLInode(element, {toolbar: true, toolbarvisible: true});
         listElement.appendChild(newnode);        
     });   
 }
@@ -53,3 +47,16 @@ function RenderToDoArray(todos){
 function MouseOver(itemuid){
     console.log(`Mouse over item ${itemuid}`);
 }
+
+function MouseOut(itemuid){
+    console.log(`Mouse out of item ${itemuid}`);
+}
+
+function EditItem(itemuid){
+    console.log(`Editing item ${itemuid}`);
+}
+
+function DeleteItem(itemuid){
+    console.log(`Deleting item ${itemuid}`);
+}
+

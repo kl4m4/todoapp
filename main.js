@@ -5,15 +5,21 @@ const loginStuff = require('./custom_modules/loginStuff.js');
 const databaseStuff = require('./custom_modules/databaseStuff.js');
 var express = require('express');
 var session = require('express-session');
+var pgSession = require('connect-pg-simple')(session);
 //var FileStore = require('session-file-store')(session);
 //var fileStoreOptions = {};
 var app = express();
 
 dbConf = databaseStuff.getDbConfig();
-databaseStuff.dbStartPool(dbConf);
+dbPool = databaseStuff.dbStartPool(dbConf);
 
 app.use(session({
+    store: new pgSession({
+        pool: dbPool,
+    }),
     secret: process.env.SESSION_SECRET,
+    resave: false,
+
 }));
 
 app.get(['/static/*', '/views/*'], function(request, response) {

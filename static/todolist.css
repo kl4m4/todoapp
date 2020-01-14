@@ -1,0 +1,66 @@
+#todolist-ul{
+    list-style-type: none;
+    width: 80%;
+}
+
+.todoitem{
+    border-style: solid;
+    border-color: darkgrey;
+    border-width: thin;
+    margin-bottom: 2px;
+    padding: 1px;
+    display: block;
+}
+
+.todoitem-content{
+    border-style: solid;
+    border-width: thin;
+    border-color: lightslategray;
+    padding: 1px;
+    display: inline-block;
+    width: 74%
+}
+
+.todoitem-title{
+    border-style: solid;
+    border-width: thin;
+    border-color: lightgreen;
+    font-weight: bold;
+    margin: 1px;
+    display: inline;
+}
+
+.todoitem-desc{
+    border-style: solid;
+    border-width: thin;
+    border-color: lightsalmon;
+    margin: 1px;
+    display: inline;
+}
+
+.todoitemtoolbar{
+    border-style: solid;
+    border-width: thin;
+    border-color: lightsteelblue;
+    padding: 1px;
+    display: inline-block;
+    width: 23%;
+    text-align: right;
+   
+}
+
+.todoitemtoolbar-edit{
+    border-style: solid;
+    border-width: thin;
+    border-color: lightcoral;
+    margin: 1px;
+    display: inline-block;
+}
+
+.todoitemtoolbar-delete{
+    border-style: solid;
+    border-width: thin;
+    border-color: lightcyan;
+    margin: 1px;
+    display: inline-block;
+}
